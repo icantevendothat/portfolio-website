@@ -10,7 +10,8 @@ const sectionImages = [
     'images/negative.png',
     'images/ispy.png',
     'images/tugofwar.png',
-    'images/Screen Shot 2024-04-25 at 6.07.23 PM.png'
+    'images/Screen Shot 2024-04-25 at 6.07.23 PM.png',
+    'images/IMG_5747 3.JPG'
 ];
 
 const artworkTitles = [
@@ -21,7 +22,8 @@ const artworkTitles = [
     "Negative Box",
     "ai-Spy",
     "Tug of War",
-    "Terminal Tiara"
+    "Skimmer",
+    "Terminal Pursuit"
 ];
 
 const artworkDescriptions = [
@@ -32,7 +34,8 @@ const artworkDescriptions = [
     "A music box using color-light sensors. Turns film negatives into music.",
     "Multi-player web app using ML5. Play i-Spy against a computer, or cheat!",
     "Multi-player online web app. Play tug of war against another user in real time.",
-    "Headpiece for performance that allows performer to manipulate vocals in real time. Arduino."
+    "Headpiece for performance that allows performer to manipulate vocals in real time. Arduino.",
+    "Interactive installation about data privacy and the OMNY system in New York City"
 ];
 
 for (let i = 0; i < sectionImages.length; i++) {
@@ -53,7 +56,7 @@ canvas.addEventListener('mousemove', function(event) {
     let mouseX = event.clientX - rect.left; 
     let mouseY = event.clientY - rect.top; 
 
-    let sectionHeight = canvas.height / 8;
+    let sectionHeight = canvas.height / 9;
     sectionIndex = Math.floor(mouseY / sectionHeight); 
 
     draw(mouseX, mouseY);
@@ -79,7 +82,7 @@ function draw(mouseX, mouseY) {
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    let sectionHeight = canvas.height / 8;
+    let sectionHeight = canvas.height / 9;
     let lineWidth = canvas.width * (5/6); 
     let descriptionX = canvas.width * (5/6) + 10; 
 
@@ -113,12 +116,12 @@ function drawTitle(title, x, y) {
 }
 
 function updateDescription(mouseY) {
-    let sectionHeight = canvas.height / 8;
+    let sectionHeight = canvas.height / 9;
     descriptionContainer.textContent = artworkDescriptions[sectionIndex];
 }
 
 canvas.addEventListener('click', function(event) {
-    let sectionHeight = canvas.height / 8;
+    let sectionHeight = canvas.height / 9;
     switch (sectionIndex) {
         case 0:
             window.location.href = 'https://icantevendothat.github.io/Inmate-Star-Chart/proj-1/index.html'; //inmate
@@ -144,9 +147,9 @@ canvas.addEventListener('click', function(event) {
         case 7:
             window.location.href = 'headpiece.html'; //mouse wedding 
             break;
-        // case 8:
-        //     window.location.href = 'headpiece.html'; //other 
-        //     break;
+        case 8:
+            window.location.href = 'terminal.html'; //other 
+            break;
         default:
             break;
     }
