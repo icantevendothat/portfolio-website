@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="media/logito.png" alt="Logo">
+        </a>
+    </div>
+
+    <div class="internal-header">
+        <h1>PHOTO</h1>
+    </div>
+
+    <div class="internal-container">
+        <div class="internal-section background-image" id="analog" data-description="Collection of film photography.">
+            <a href="analog.html">Analog Gallery</a>
+        </div>
+        <div class="internal-section background-image" id="digital" data-description="Collection of digital photography.">
+            <a href="digital.html">Digital Gallery</a>
+        </div>
+        <div class="internal-section background-image" id="sitting" data-description="Cyanotype series of self portraits. Inspired by immobility.">
+            <a href="sittingaround.html">"Sitting Around"</a>
+        </div>
+        <div class="internal-section background-image" id="spaces" data-description="Audiovisual series exploring girlhood and danger.">
+            <a href="https://www.instagram.com/p/CMlKcMFsojV/?img_index=1">"Spaces"</a>
+        </div>
+        <div class="internal-section background-image" id="richmond" data-description="Series of portraits in Richmond, Virginia.">
+            <a href="richmond.html">"Random House"</a>
+        </div>
+        <div class="internal-section background-image" id="gsd" data-description="Go Skate Day in Washington DC, 2021">
+            <a href="gsd.html">Freedom Plaza</a>
+        </div>
+    </div>
+    
+
+    <div class="description-container">
+        <div class="description" id="description">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.internal-section').forEach(section => {
+            section.addEventListener('mouseover', function() {
+                const id = this.id;
+                const description = this.getAttribute('data-description');
+               
+                document.body.style.backgroundImage = `url('media/${id}.png')`;
+                document.getElementById('description').innerText = description;
+            });
+    
+            section.addEventListener('mouseout', function() {
+                document.body.style.backgroundImage = 'media/other.png'; 
+                document.getElementById('description').innerText = '';
+            });
+        });
+    </script>
+</body>
+</html>

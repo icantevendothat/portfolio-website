@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Annika Santhanam</title>
-<link rel="icon" href="images/favicon.png" type="image/png">
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annika Santhanam</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <div id="headermain">
-        <div id="left-link">
-            <a href="contact.html">CONTACT</a>
-        </div>
-        <div id="logomain">
-            <img src="images/logito.png" alt="Logo">
-        </div>
-        <div id="right-link">
-            <a href="https://www.instagram.com/icantevendothat/">@ICANTEVENDOTHAT</a>
-        </div>
+    <div class="header">
+        <a href="contact.html">Contact</a>
+        <img src="media/logito.png" alt="Logo">
+        <a href="https://instagram.com/icantevendothat" target="_blank">@icantevendothat</a>
     </div>
+
+    <video class="background-video" autoplay loop>
+        <source id="videoSource" src="media/default.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <a href="film.html" class="section" onmouseover="changeVideo('media/film.mp4')">
+            <h2>FILM</h2>
+        </a>
+        <a href="photo.html" class="section" onmouseover="changeVideo('media/photo.mp4')">
+            <h2>PHOTO</h2>
+        </a>
+        <a href="graphic.html" class="section" onmouseover="changeVideo('media/graphic.mp4')">
+            <h2>GRAPHIC</h2>
+        </a>
+        <a href="sound.html" class="section" onmouseover="changeVideo('media/sound.mp4')">
+            <h2>SOUND</h2>
+        </a>
+        <a href="interactive.html" class="section" onmouseover="changeVideo('media/interactive.mp4')">
+            <h2>INTERACTIVE</h2>
+        </a>
+        <a href="about.html" class="section" onmouseover="changeVideo('media/about.mp4')">
+            <h2>ABOUT</h2>
+        </a>
+    </div>
+
+    <script>
+            document.addEventListener("visibilitychange", function() {
+        const videoElement = document.querySelector('video'); 
+        if (document.hidden) {
+            videoElement.muted = true;
+        } else {
+            videoElement.muted = false;
+        }
+    });
     
-    <div id="loadingOverlay">
-        <img id="logito" src="images/logito.png">
-        <button id="enterButton">Click to Enter</button>
-    </div>
-<canvas id="mymainCanvas"></canvas>
-<script src="homepage.js"></script>
+        function changeVideo(videoPath) {
+            const videoElement = document.getElementById('videoSource');
+            videoElement.src = videoPath;
+            videoElement.parentElement.load(); 
+        }
+    </script>
+
 </body>
 </html>
-
-<!-- 
-format for iphone
--->
-

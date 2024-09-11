@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="media/logito.png" alt="Logo">
+        </a>
+    </div>
+
+    <div class="internal-header">
+        <h1>Graphic</h1>
+    </div>
+
+    <div class="internal-container">
+        <div class="internal-section background-image" id="patterns" data-description="Pattern book. Designs based on microbiology of Indian plants.">
+            <a href="patterns.html">"Patterns"</a>
+        </div>
+        <div class="internal-section background-image" id="clara" data-description="Graffiti Zine featuring Cuban graffiti writers TAIKO and LOU.">
+            <a href='https://indd.adobe.com/view/74fea5d9-0880-4589-b011-a401a8e9a1eb'>"Clara y Oscura"</a>
+        </div>
+        <div class="internal-section background-image" id="ratp" data-description="Transit Zine. Guide to evading the fare successfully on the Paris subway..">
+            <a href="ratp.html">"RATP"</a>
+        </div>
+        <div class="internal-section background-image" id="posters" data-description="Various poster designs for shows and events.">
+            <a href="posters.html">Posters</a>
+        </div>
+        <div class="internal-section background-image" id="3d" data-description="3D Modeling works. Blender.">
+            <a href="3d.html">"3D"</a>
+        </div>
+        <div class="internal-section background-image" id="wnyu" data-description="Design work for WNYU 89.1 FM Radio.">
+            <a href="wnyu.html">"WNYU"</a>
+        </div>
+    </div>
+    
+
+    <div class="description-container">
+        <div class="description" id="description">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.internal-section').forEach(section => {
+            section.addEventListener('mouseover', function() {
+                const id = this.id;
+                const description = this.getAttribute('data-description');
+               
+                document.body.style.backgroundImage = `url('media/${id}.png')`;
+                document.getElementById('description').innerText = description;
+            });
+    
+            section.addEventListener('mouseout', function() {
+                document.body.style.backgroundImage = 'media/other.png'; 
+                document.getElementById('description').innerText = '';
+            });
+        });
+    </script>
+</body>
+</html>

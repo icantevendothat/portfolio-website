@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio</title>
+    <link rel="icon" href="media/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="internal-header">
+        <h1>Biography</h1>
+    </div>
+    <a href="about.html">
+        <img id="backButton" src="media/backbutton.png" alt="Back to Homepage">
+    </a>
+    <div class="bio-container">
+        <p id="bio-text" class="bio">Annika Santhanam is a 21-year-old girl based in New York City. Does not like citibikes or eggs. Enjoys sounds. Has a collection of collections and does her dishes!</p>
+        <img id="refresh-bio" src="media/refreshbutton.png" alt="Refresh Bio">
+    </div>
+    <script>
+        const bios = [
+            "Annika Santhanam is a 22-year-old girl based in New York City. Does not like citibikes or eggs. Enjoys sounds. Has a collection of collections and does her dishes!",
+            "Annika Santhanam is an Indian-American designer of sounds, images, and technology. Fan of big venues with good sound systems and not a fan of 15 dollar cocktails.",
+            "Annika Santhanam is a former vegetarian, former writer, and former blonde. Likes to work with her hands and in good company. Probably sleepy.",
+            "Annika Santhanam is a Brooklyn based artist raised by Queens ladies. Most likely watching a travel or cooking show or traveling or cooking. ",
+        ];
+
+        let lastBioIndex = -1; 
+        let remainingBios = [...bios]; 
+
+        function getRandomBio() {
+            if (remainingBios.length === 0) {
+                remainingBios = [...bios];
+            }
+
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * remainingBios.length);
+            } while (remainingBios[randomIndex] === bios[lastBioIndex]); 
+
+            
+            const selectedBio = remainingBios[randomIndex];
+            lastBioIndex = bios.indexOf(selectedBio);
+            remainingBios.splice(randomIndex, 1); 
+
+            return selectedBio;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const bioText = document.getElementById("bio-text");
+            const refreshImage = document.getElementById("refresh-bio");
+
+            bioText.textContent = getRandomBio();
+
+            refreshImage.addEventListener("click", () => {
+                bioText.textContent = getRandomBio();
+            });
+        });
+    </script>
+</body>
+</html>

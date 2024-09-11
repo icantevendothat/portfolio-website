@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="media/logito.png" alt="Logo">
+        </a>
+    </div>
+
+    <div class="internal-header">
+        <h1>Sound</h1>
+    </div>
+
+    <div class="internal-container">
+        <div class="internal-section background-image" id="brothers" data-description="Sound design for Roy Nathanson's one man play, 'Brothers'. 2023.">
+            <a href="https://youtu.be/GVqdCWggNa4">"Brothers"</a>
+        </div>
+        <div class="internal-section background-image" id="limerence" data-description="Sound design for Irmak Akgur's short film, 'Limerence', 2022.">
+            <a href='https://www.nobudge.com/most-viewed-2024/videos/limerence'>"Limerence"</a>
+        </div>
+        <div class="internal-section background-image" id="inthrees" data-description="Sound design and mix for Nico Love's thesis film, 'In Threes', 2023.">
+            <a href="https://vimeo.com/867368348">"In Threes"</a>
+        </div>
+        <div class="internal-section background-image" id="music" data-description="Musical releases.">
+            <a href="https://soundcloud.com/doliprane1000/my-clock?si=d190347d3c6a4a70bc9d6c4342bdfb7e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">Music</a>
+        </div>
+        <div class="internal-section background-image" id="actinghuman" data-description="Dialogue editor for 'Acting Human' TV Pilot, Directed by Augustus Tyde G. 2023.">
+            <a href="https://www.youtube.com/watch?v=9rmyxcL0BDM">"Acting Human"</a>
+        </div>
+        <div class="internal-section background-image" id="mareas" data-description="Sound design and mix for Camila Rodriguez-Lopez's thesis film, 'Mareas a la Deriva. 2024.">
+            <a href="https://www.instagram.com/mareasaladeriva/">"Mareas a la Deriva"</a>
+        </div>
+        <div class="internal-section background-image" id="heaven" data-description="Live performance with Jaiden McCrann. Touch designer and Ableton Live, 2024.">
+            <a href="heavensgate.html">"Heaven's Gate"</a>
+        </div>
+        <div class="internal-section background-image" id="lecons" data-description="Sound design for self-directed projects.">
+            <a href="film.html">Personals</a>
+        </div>
+    </div>
+    
+
+    <div class="description-container">
+        <div class="description" id="description">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.internal-section').forEach(section => {
+            section.addEventListener('mouseover', function() {
+                const id = this.id;
+                const description = this.getAttribute('data-description');
+               
+                document.body.style.backgroundImage = `url('media/${id}.png')`;
+                document.getElementById('description').innerText = description;
+            });
+    
+            section.addEventListener('mouseout', function() {
+                document.body.style.backgroundImage = 'media/other.png'; 
+                document.getElementById('description').innerText = '';
+            });
+        });
+    </script>
+</body>
+</html>

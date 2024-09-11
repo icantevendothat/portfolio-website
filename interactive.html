@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="media/logito.png" alt="Logo">
+        </a>
+    </div>
+
+    <div class="internal-header">
+        <h1>Interactive</h1>
+    </div>
+
+    <div class="internal-container">
+        <div class="internal-section background-image" id="inmate" data-description="Interactive webpage concerning mass incarceration in the United States through the lens of New York City.">
+            <a href='https://icantevendothat.github.io/Inmate-Star-Chart/proj-1/index.html'>Inmate Star Chart</a>
+        </div>
+        <div class="internal-section background-image" id="lou" data-description="Interactive installation created in MaxMSP. Portrait of Cuban graffiti writer 'LOU'. An invitation to listen.">
+            <a href='https://youtu.be/uK3027C9XuQ'>"LOU"</a>
+        </div>
+        <div class="internal-section background-image" id="ineinander" data-description="Public art installation/performace. An exploration of permeability and one another.">
+            <a href="ineinander.html">"Ineinander"</a>
+        </div>
+        <div class="internal-section background-image" id="blackhair" data-description="Public art installation. 6 Sculptures and an audio-guided walking tour of New York City.">
+            <a href="boxdye.html">"Box Dye"</a>
+        </div>
+        <div class="internal-section background-image" id="negativebox" data-description="A music box using color-light sensors. Turns film negatives into music.">
+            <a href="negativebox.html">"Negative Box"</a>
+        </div>
+        <div class="internal-section background-image" id="pano" data-description="Interactive installation about data privacy and the OMNY system in New York City">
+            <a href='http://panocard.info/'>"PANO"</a>
+        </div>
+    </div>
+    
+
+    <div class="description-container">
+        <div class="description" id="description">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.internal-section').forEach(section => {
+            section.addEventListener('mouseover', function() {
+                const id = this.id;
+                const description = this.getAttribute('data-description');
+               
+                document.body.style.backgroundImage = `url('media/${id}.png')`;
+                document.getElementById('description').innerText = description;
+            });
+    
+            section.addEventListener('mouseout', function() {
+                document.body.style.backgroundImage = 'media/other.png'; 
+                document.getElementById('description').innerText = '';
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- "Interactive webpage concerning mass incarceration in the United States through the lens of New York City."
+"Interactive installation created in MaxMSP. Portrait of Cuban graffiti writer 'LOU'. An invitation to listen."
+"Public art installation/performace. An exploration of permeability and one another."
+"Public art installation. 6 Sculptures and an audio-guided walking tour of New York City."
+"A music box using color-light sensors. Turns film negatives into music."
+"Multi-player web app using ML5. Play i-Spy against a computer, or cheat!"
+"Multi-player online web app. Play tug of war against another user in real time."
+"Headpiece for performance that allows performer to manipulate vocals in real time. Arduino."
+"Interactive installation about data privacy and the OMNY system in New York City" -->

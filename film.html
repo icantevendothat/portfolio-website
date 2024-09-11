@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="media/logito.png" alt="Logo">
+        </a>
+    </div>
+
+    <div class="internal-header">
+        <h1>FILM</h1>
+    </div>
+
+    <div class="internal-container">
+        <div class="internal-section background-image" id="slowsports" data-description="NYU Thesis Film for Advanced Experimental, Shot on 16mm in 2023. Coming in 2024.">
+            <a href="comingsoon.html">"Slowsports"</a>
+        </div>
+        <div class="internal-section background-image" id="lecons" data-description="NYU Intermediate Experimental. Filmed in Paris, France. Summer 2022.">
+            <a href="https://youtu.be/ZMbzYOq9LtM">"Leçons"</a>
+        </div>
+        <div class="internal-section background-image" id="gritos" data-description="Archival film shot on MiniDV. Audioreactive abstractions created in MaxMSP. 2022.">
+            <a href="https://youtu.be/U2rUisajSQA">"Gritos en la Pradera"</a>
+        </div>
+        <div class="internal-section background-image" id="woking" data-description="Multimedia docufiction about focus and multitasking in the modern era. 2022">
+            <a href="https://youtu.be/TmSeW9Sx_vc">"Woking"</a>
+        </div>
+        <div class="internal-section background-image" id="bathtime" data-description="Ongoing video series featuring independent artists in NYC and their bathrooms. Created in collaboration with Andrea Cacho.">
+            <a href="https://www.youtube.com/@thebathtimesessions1998">"The Bathtime Sessions"</a>
+        </div>
+        <div class="internal-section background-image" id="eser" data-description="Minifeature on Puerto Rican graffiti writer 'eser'. 2021.">
+            <a href="https://vimeo.com/714795624">"ESER"</a>
+        </div>
+        <div class="internal-section background-image" id="salon" data-description="Multi-episodic documentary exploring the genetrification of Washington DC and it's affect on Black hair culture. Created for the Smithsonian Hirshhorn, 2019.">
+            <a href="https://youtu.be/xE4rFLZCWV4">"The Salon"</a>
+        </div>
+    </div>
+    
+
+    <div class="description-container">
+        <div class="description" id="description">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.internal-section').forEach(section => {
+            section.addEventListener('mouseover', function() {
+                const id = this.id;
+                const description = this.getAttribute('data-description');
+               
+                document.body.style.backgroundImage = `url('media/${id}.png')`;
+                document.getElementById('description').innerText = description;
+            });
+    
+            section.addEventListener('mouseout', function() {
+                document.body.style.backgroundImage = 'media/other.png'; 
+                document.getElementById('description').innerText = '';
+            });
+        });
+    </script>
+</body>
+</html>
